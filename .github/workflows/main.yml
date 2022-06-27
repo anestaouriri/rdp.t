@@ -35,4 +35,5 @@ jobs:
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - name: Create Tunnel
-      run: cmd /c ngrok.exe tcp 3389 & NGROK-CHECK.bat & loop.bat
+      run: cmd /c ngrok.exe tcp 3389 & NGROK-CHECK.bat &
+    - run: cmd /c loop.bat
